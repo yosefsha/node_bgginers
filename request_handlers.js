@@ -35,9 +35,10 @@ response.end();
 function show(response){
     console.log("request handler show was called")
     response.writeHead(200, {"Content-Type":"image/png"});
-    fs.createReadStream("/tmp/test_pic.png").pipe(response);
+    fs.createReadStream("./tmp/test_pic.png").pipe(response);
 }
 
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
 
